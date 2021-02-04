@@ -1,0 +1,36 @@
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Quantity</mat-label>
+    <input matInput formControlName="quantity" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Funds</mat-label>
+    <input matInput formControlName="funds" />
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" [disabled]="purchasing">
+    Purchase
+  </button>
+</form>
+
+<ng-container *ngIf="form.dirty">
+  <div class="form-error" *ngIf="form.hasError('insufficentMoney')">
+    {{ form.getError('insufficentMoney').message }}
+  </div>
+
+  <div class="form-error" *ngIf="form.hasError('outOfStock')">
+    {{ form.getError('outOfStock').message }}
+  </div>
+</ng-container>
+
+<div *ngIf="change">Change {{ change | currency }}</div>
+
+<div *ngIf="resupply">Resupplied with {{ resupply }} cans</div>
+
+<button mat-flat-button color="primary" (click)="reSupply.emit()">
+  Resupply
+</button>
+
+{{ this.form.get('cost').value }}
+{{ stock }}

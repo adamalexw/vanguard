@@ -1,0 +1,32 @@
+{
+  "npmScope": "vanguard",
+  "affected": { "defaultBase": "master" },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+    }
+  },
+  "projects": {
+    "vending-machine": { "tags": [] },
+    "vending-machine-e2e": {
+      "tags": [],
+      "implicitDependencies": ["vending-machine"]
+    },
+    "vending-machine-data-access": {
+      "tags": ["scope:vending-machine", "type:data-access"]
+    },
+    "vending-machine-feature-shell": {
+      "tags": ["scope:vending-machine", "type:feature"]
+    },
+    "vending-machine-ui": { "tags": ["scope:vending-machine", "type:ui"] }
+  }
+}

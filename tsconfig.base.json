@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@vanguard/vending-machine/data-access": [
+        "libs/vending-machine/data-access/src/index.ts"
+      ],
+      "@vanguard/vending-machine/feature-shell": [
+        "libs/vending-machine/feature-shell/src/index.ts"
+      ],
+      "@vanguard/vending-machine/ui": ["libs/vending-machine/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
