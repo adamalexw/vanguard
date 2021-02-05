@@ -12,13 +12,6 @@ export class VendingMachineService {
   }
 
   purchase(order: PurchaseOrder, cost: number): Observable<number> {
-    const change = order.funds - order.quantity * cost;
-    console.log(
-      '🚀 ~ file: vending-machine.service.ts ~ line 16 ~ VendingMachineService ~ purchase ~ change',
-      change,
-      { order },
-      { cost }
-    );
     return of(order.funds - order.quantity * cost);
   }
 }

@@ -57,6 +57,8 @@
     "@angular/compiler-cli": "^11.0.0",
     "@angular/language-service": "^11.0.0",
     "@angular/localize": "^11.1.1",
+    "@hirez_io/observer-spy": "^2.1.0",
+    "@ngneat/spectator": "^7.0.0",
     "@nrwl/cli": "11.2.9",
     "@nrwl/cypress": "11.2.9",
     "@nrwl/eslint-plugin-nx": "11.2.9",

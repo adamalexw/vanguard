@@ -12,14 +12,9 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] },
               {
                 "sourceTag": "type:data-acces",
                 "onlyDependOnLibsWithTags": ["type:data-access"]
-              },
-              {
-                "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": ["type:feature"]
               },
               {
                 "sourceTag": "scope:vending-machine",

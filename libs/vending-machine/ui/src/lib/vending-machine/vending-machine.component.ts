@@ -50,6 +50,7 @@ export class VendingMachineComponent implements OnChanges {
   reSupply = new EventEmitter();
 
   form: FormGroup;
+  soda: number[];
 
   /**
    * Construct the form
@@ -58,8 +59,8 @@ export class VendingMachineComponent implements OnChanges {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group(
       {
-        quantity: [1, Validators.required],
-        funds: [null, Validators.required],
+        quantity: [1, [Validators.required, Validators.min(1)]],
+        funds: [0, [Validators.required, Validators.min(1)]],
         cost: [],
         stock: [],
       },
@@ -77,6 +78,7 @@ export class VendingMachineComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.stock && this.stock !== undefined) {
       this.form.get('stock').setValue(this.stock, { emitEvent: false });
+      this.addSodaStock(this.stock);
     }
 
     if (changes.cost && this.cost !== undefined) {
@@ -85,6 +87,18 @@ export class VendingMachineComponent implements OnChanges {
 
     if (changes.purchaseSuccess && this.purchaseSuccess) {
       this.resetForm();
+    }
+  }
+
+  /**
+   * Array to ngFor over to display soda icons
+   * @param stock
+   */
+  private addSodaStock(stock: number) {
+    this.soda = [];
+
+    for (let index = 0; index < stock; index++) {
+      this.soda.push(index + 1);
     }
   }
 
@@ -108,14 +122,15 @@ export class VendingMachineComponent implements OnChanges {
 
     this.form.reset();
 
-    this.form.patchValue({
-      quantity: 1,
-      funds: null,
-      cost,
-      stock,
-    });
-
-    this.form.get('funds').setErrors(null);
+    this.form.patchValue(
+      {
+        quantity: 1,
+        funds: 0,
+        cost,
+        stock,
+      },
+      { emitEvent: false }
+    );
   }
 
   /**

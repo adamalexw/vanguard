@@ -14,11 +14,11 @@
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
-          { "type": "attribute", "prefix": "vanguard", "style": "camelCase" }
+          { "type": "attribute", "prefix": "vg", "style": "camelCase" }
         ],
         "@angular-eslint/component-selector": [
           "error",
-          { "type": "element", "prefix": "vanguard", "style": "kebab-case" }
+          { "type": "element", "prefix": "vg", "style": "kebab-case" }
         ]
       }
     },

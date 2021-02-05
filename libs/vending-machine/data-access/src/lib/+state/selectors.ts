@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State, VENDINGMACHINE_FEATURE_KEY } from './reducers';
+import { State, VENDINGMACHINE_FEATURE_KEY } from './reducer';
 
 const getState = createFeatureSelector<State>(VENDINGMACHINE_FEATURE_KEY);
 

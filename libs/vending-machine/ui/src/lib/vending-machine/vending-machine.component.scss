@@ -1,6 +1,64 @@
-@import '~@angular/material/theming';
-
 :host {
   display: block;
   padding: 20px;
+}
+
+$screen-left: 130px;
+$button-left: 380px;
+
+.quantity,
+.funds,
+.purchase,
+.resupply,
+.message,
+.soda,
+.change,
+.cost {
+  position: absolute;
+}
+
+.quantity {
+  top: 120px;
+  left: $screen-left;
+}
+
+.funds {
+  top: 180px;
+  left: $screen-left;
+}
+
+.message {
+  top: 240px;
+  left: $screen-left;
+}
+
+.change {
+  left: 140px;
+  top: 437px;
+  text-align: center;
+  width: 147px;
+}
+
+.purchase {
+  top: 180px;
+  left: $button-left;
+}
+
+.resupply {
+  top: 240px;
+  left: $button-left;
+}
+
+.soda {
+  top: 300px;
+  left: $screen-left;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 180px;
+}
+
+.cost {
+  color: yellow;
+  left: 407px;
+  top: 124px;
 }

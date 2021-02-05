@@ -12,7 +12,7 @@ import {
   purchaseOrder,
   purchaseSuccess,
 } from './actions';
-import { State } from './reducers';
+import { State } from './reducer';
 import { selectCost } from './selectors';
 
 @Injectable()

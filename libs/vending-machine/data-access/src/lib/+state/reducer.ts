@@ -25,7 +25,7 @@ export interface State {
   resupply?: number;
 }
 
-const initialState: State = {
+export const initialState: State = {
   loading: false,
   loaded: false,
   cost: 0,
@@ -56,12 +56,12 @@ const vendingMachineReducer = createReducer(
   on(clearPurchase, (state) => ({
     ...state,
     purchasing: false,
-    purchaseSuccess: false,
+    purchaseSuccess: undefined,
     purchaseError: undefined,
     change: undefined,
     resupply: undefined,
   })),
-  on(purchaseOrder, (state, { order }) => ({
+  on(purchaseOrder, (state) => ({
     ...state,
     purchasing: true,
     purchaseSuccess: false,
@@ -87,6 +87,8 @@ const vendingMachineReducer = createReducer(
     ...state,
     stock: quantity,
     resupply: quantity,
+    puchasing: false,
+    change: undefined,
   }))
 );
 

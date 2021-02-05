@@ -13,8 +13,8 @@ import {
   selectPurchasing,
   selectResupply,
   selectStock,
+  State,
 } from '@vanguard/vending-machine/data-access';
-import { State } from 'libs/vending-machine/data-access/src/lib/+state/reducers';
 
 @Component({
   selector: 'vg-vending-machine-home',
