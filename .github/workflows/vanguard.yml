@@ -49,7 +49,7 @@ jobs:
       - run: npm ci
 
       - name: Lint
-        run: npm run affected:lint -- --base=origin/${{ github.event.push.base.ref }} --parallel
+        run: npm run affected:lint --parallel
 
       - name: Test
-        run: TZ=Australia/Melbourne npm run affected:test -- --base=origin/${{ github.event.push.base.ref }} --parallel
+        run: TZ=Australia/Melbourne npm run affected:test --parallel
